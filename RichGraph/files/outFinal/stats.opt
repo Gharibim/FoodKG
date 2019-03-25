@@ -1,0 +1,12 @@
+(stats
+  (meta
+    (timestamp "2019-03-13T09:41:39.003-05:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>)
+    (run@ "2019/03/13 09:41:39 CDT")
+    (count 9))
+  (<http://www.w3.org/1999/02/22-rdf-syntax-ns#IURLs_CHEESE> 1)
+  (<http://dbpedia.org/ontology/fat> 2)
+  (<http://www.w3.org/1999/02/22-rdf-syntax-ns#isA> 1)
+  (<http://www.w3.org/1999/02/22-rdf-syntax-ns#Semantic_Similarity> 1)
+  (<http://www.w3.org/1999/02/22-rdf-syntax-ns#RANDOM> 3)
+  (<http://www.w3.org/1999/02/22-rdf-syntax-ns#IURLs_BUTTER> 1)
+  (other 0))

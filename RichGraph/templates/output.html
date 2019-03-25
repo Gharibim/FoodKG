@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>output</title>
+</head>
+<body>
+
+{% if data %}
+    {% for para in data %}
+        <p>{{ para }}</p>
+    {% endfor %}
+{% else %}
+    <p>Wrong query, please try again!</p>
+{% endif %}
+
+</body>
+</html>
