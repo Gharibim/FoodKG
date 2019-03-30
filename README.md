@@ -9,19 +9,20 @@
 
 
 **Run FoodKG**</br>
-All what you need to run the software is `python3 FoodKG.py`. You can find a simple input file in `Sample_Input` folder. </br> </br>
+All what you need to run the software is `python3 FoodKG.py`. You can find a sample input file in `Sample_Input` folder. </br> </br>
 
 **AGROVOC & AGROVEC**</br>
-Our space vectors `AGROVEC` can be found in `Prediction/AGROVEC/` and there are 2 vectos `vectors.300d.txt` which is the default vector that FoodKG uses. If you want to try `vectors.50d.txt` then just change the vector name in `prepare_Models.py`. Moreover, if you would like to use `glove.42B.300d.txt` or compare it to our vector, then just add the vector to `Prediction/AGROVEC/` and change the name in `prepare_Models.py`. Get Glvoe from [here](https://nlp.stanford.edu/projects/glove/) </br>
-By default, the loaded words are `10000`, you can change the number in `prepare_Models.py`. </br> 
+FoodKG will run and use our space vector `AGROVEC` by default. Our vectors can be found in `Prediction/AGROVEC/`. There are 2 versions: `agrovec.300d.txt` and `agrovec.50d.txt`. </br> 
+Moreover, if you would like to use `Glove` or any other vector instead of `AGROVEC`, then add the new vector in the same directory and change the name in `prepare_Models.py`. Get Glvoe from [here](https://nlp.stanford.edu/projects/glove/) </br>
+By default, the loaded words are `10000`, you can change the number in `prepare_Models.py`. </br></br>  
 
-Our vector was trained using `AGROVOC` triples dataset, which get be found [here](http://aims.fao.org/agrovoc/releases). </br>
-To extract classes and instances, use SPARQL queries in `SPARQL_Queries` folder.
-</br> </br> 
 
 
 **Relations Prediction**</br>
-FoodKG uses [Specialization Tensor Model (STM)](https://github.com/codogogo/stm) to predict triples predicates. We re-trained STM model on AGROVOC. FoodKG will use our model `Prediction/relations_prediction/args.output` by default. To re-train this model, you can use the SPARQL Queries that can be found in `SPARQL_Queries` to extract AGROVOC instances, then check [STM Github](https://github.com/codogogo/stm) page to prepare the training data. </br></br>
+FoodKG uses [Specialization Tensor Model (STM)](https://github.com/codogogo/stm) to predict triples predicates. However, we re-trained STM model on AGROVOC triples dataset. FoodKG will use our model `Prediction/relations_prediction/args.output` by default. 
+
+If you want to re-train the model by yourself, we provided for you the SPARQL queries that you need to extract the instances from a dataset `SPARQL_Queries`. In our case, we used `AGROVOC` triples dataset, which get be found [here](http://aims.fao.org/agrovoc/releases). After extracting the instances using SPARQL, check [STM Github](https://github.com/codogogo/stm) page to prepare the training data for STM. </br></br>
+
 
 
 
