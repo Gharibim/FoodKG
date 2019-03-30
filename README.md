@@ -19,9 +19,9 @@ By default, the loaded words are `10000`, you can change the number in `prepare_
 
 
 **Relations Prediction**</br>
-FoodKG uses [Specialization Tensor Model (STM)](https://github.com/codogogo/stm) to predict triples predicates. However, we re-trained STM model on AGROVOC triples dataset. FoodKG will use our model `Prediction/relations_prediction/args.output` by default. 
+FoodKG uses [Specialization Tensor Model (STM)](https://github.com/codogogo/stm) to predict triples predicates. However, we re-trained STM model on AGROVOC triples dataset. FoodKG will use our pre-trained model `Prediction/relations_prediction/args.output` by default. 
 
-If you want to re-train the model by yourself, we provided for you the SPARQL queries that you need to extract the instances from a dataset `SPARQL_Queries`. In our case, we used `AGROVOC` triples dataset, which get be found [here](http://aims.fao.org/agrovoc/releases). After extracting the instances using SPARQL, check [STM Github](https://github.com/codogogo/stm) page to prepare the training data for STM. </br></br>
+If you want to re-train the STM model by yourself, we provided for you the SPARQL queries that you need to extract the instances from a dataset `SPARQL_Queries`. In our case, we used `AGROVOC` triples dataset, which get be found [here](http://aims.fao.org/agrovoc/releases). After extracting the instances using SPARQL, check [STM Github](https://github.com/codogogo/stm) page to prepare the training data for STM. </br></br>
 
 
 
