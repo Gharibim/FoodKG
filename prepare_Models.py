@@ -38,7 +38,7 @@ def prepare_Models():
 
     print("Loading model...")
     print(os.getcwd())
-    hyperparams, vars = pickle.load(open("Prediction/AGROVOC/args.output", "rb"))
+    hyperparams, vars = pickle.load(open("Prediction/relations_prediction/args.output", "rb"))
 
     same_mlp = hyperparams[0]
     bilinear_softmax = hyperparams[1]

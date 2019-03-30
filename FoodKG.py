@@ -193,4 +193,4 @@ def output_Data():
 
 if __name__ == '__main__':
     prepare_Models()
-    app.run(debug=True, use_reloader=False)
+    app.run(use_reloader=False)
