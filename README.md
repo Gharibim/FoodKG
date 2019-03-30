@@ -26,11 +26,16 @@ If you want to re-train the STM model by yourself, we provided for you the SPARQ
 
 **Our vector vs. Glove**</br>
 Classify an entity to a class
+
 | Category | Instance | AGROVEC 300d | GloVe 300d | AGROVEC 50d | GloVe 50d |
-| :---:       |     :---:      |      :---: | :---: | :---: | :---: |
-| Fruit   | Apple     | .996    | .016 | .995 | .081 |
+| :---:    |  :---:   |  :---:       | :---:      | :---:       | :---:     |
+| Fruit    | Apple    | .996         | .016       | .995        | .081      |
 
 
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
 
 
 **References:** </br>
