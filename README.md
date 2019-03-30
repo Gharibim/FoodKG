@@ -1,6 +1,6 @@
 # FoodKG: A Software Tool to Enrich Knowledge Graphs on Food Datasets </br>
 
-** Required libraries: ** 
+**Required libraries:** 
 1) TensorFlow 
 2) Flask 
 3) NLTK 
@@ -8,7 +8,7 @@
 5) Beautiful Soup  
 
 
-** Run FoodKG **
+**Run FoodKG**
 All what you need to run the software is `python3 FoodKG.py`. You can find a simple input file in `Sample_Input` folder. </br>
 
 ** AGROVOC & AGROVEC **
