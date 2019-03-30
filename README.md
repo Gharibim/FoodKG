@@ -31,11 +31,17 @@ Classify an entity to a class
 | :---:    |  :---:   |  :---:       | :---:      | :---:       | :---:     |
 | Fruit    | Apple    | .996         | .016       | .995        | .081      |
 
+Semantic similarity score: AGROVEC vs. GloVe
 
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
+| First word | Second word | AGROVEC 300d | GloVe 300d | 
+| :---:    |  :---:   |  :---:       | :---:      | 
+| Apple    | Orange    | .896         | .320       | 
+
+Most similar words
+
+| Word | AGROVEC 300d | GloVe 300d | 
+| :---:     |  :---:       | :---:      | 
+| Ovibos    | inactivated, windrowers, haemostasis         | N/A       | 
 
 
 **References:** </br>
