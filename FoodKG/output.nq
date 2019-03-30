@@ -1,7 +1,0 @@
-<http://dbpedia.org/page/ft,cheese,&ft> <http://dbpedia.org/ontology/fat> "9" <gdgd> .
-<http://dbpedia.org/page/ft,butter,mlcrm&salt> <http://dbpedia.org/ontology/fat> "12" <gdgd> .
-<http://dbpedia.org/page/ft,butter,mlcrm&salt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#isA> <http://dbpedia.org/page/BUTTER,MLCRM> <gdgd> .
-<http://dbpedia.org/page/Cheese> <http://www.w3.org/1999/02/22-rdf-syntax-ns#altLabel> <http://dbpedia.org/page/Butter> <gdgd> .
-<http://dbpedia.org/page/ft,cheese,&ft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#altLabel> _:43373267 <gdgd> .
-<http://dbpedia.org/page/ft,butter,mlcrm&salt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#altLabel> _:43373267 <gdgd> .
-_:43373267 <http://www.w3.org/1999/02/22-rdf-syntax-ns#Semantic_Similarity> "0.7352097" <gdgd> .
