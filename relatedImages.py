@@ -13,7 +13,6 @@ mainSim, hashOut = 0, 0
 subToUse, objToUse = '', ''
 
 def imageURLS(word, hashed_output, writer, relationToUse, context):
-    print("Inside the first functionnnns")
     try:
         myWord = wordnet.synsets(word)[0]
         concept_offset = myWord.offset()
@@ -71,7 +70,6 @@ def readFile(fileName, context):
                 sub_line1 = sub_line1.split('/')[-1].upper()
                 try:
                     extractedSub = entityEtra.get_continuous_chunks(sub_line1.upper())
-                    print("sub ext", extractedSub)
                     extractedSubLength = len(extractedSub)
                 except Exception as e:
                     print(e)
@@ -113,7 +111,6 @@ def readFile(fileName, context):
                 sub_line2 = sub_line2.split('/')[-1].upper()
                 try:
                     extractedObj = entityEtra.get_continuous_chunks(sub_line2.upper())
-                    print("obj ext", extractedObj)
                     extractedObjLength = len(extractedObj)
                 except Exception as e:
                     print(e)
