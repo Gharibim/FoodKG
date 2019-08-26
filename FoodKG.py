@@ -159,8 +159,8 @@ def queryData():
             writer.close()
             if 'outFinal' in os.listdir():
                 shutil.rmtree('outFinal')
-            os.system('./../apache-jena-3.10.0/bin/tdbloader2 --loc outFinal input.nq')
-            os.system('./../apache-jena-3.10.0/bin/tdbquery --loc outFinal --query query.sparql > output.nq')
+            os.system('./../apache-jena-3.12.0/bin/tdbloader2 --loc outFinal input.nq')
+            os.system('./../apache-jena-3.12.0/bin/tdbquery --loc outFinal --query query.sparql > output.nq')
             print("Tst")
             data = readFileResult()
         except Exception as e:
@@ -193,4 +193,4 @@ def output_Data():
 
 if __name__ == '__main__':
     prepare_Models()
-    app.run(use_reloader=False)
+    app.run(use_reloader=False, host='0.0.0.0')
