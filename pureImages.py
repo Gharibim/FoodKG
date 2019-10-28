@@ -17,23 +17,19 @@ subToUse, objToUse = '', ''
 
 
 def specificImageURLs(word, hashed_output, writer, relationToUse, context):
-    print("Inside the secooond functionnnns", word)
     try:
         syns = wordnet.synsets('{}'.format(word))[0]
         syn_offset = syns.offset()
-        print(syn_offset)
         page = requests.get('http://www.image-net.org/search?q={}'.format(word))
         soup = BeautifulSoup(page.content, 'html.parser')
         if len(str(syn_offset)) == 7:
             try:
-                print("Reachhhhhhhhhhhed first try")
                 for link in soup.find_all('a', {'href': 'synset?wnid=n0{}'.format(syn_offset)}):
-                    print("Insidde the fooooooooooooor")
                     writer.write(
                         '_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
                                                                                          word, link.img['src'],
                                                                                          context))
-                    print('_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
+                    # print('_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
                                                                                          word, link.img['src'],
                                                                                          context))
                     writer.write('\n')
@@ -41,13 +37,12 @@ def specificImageURLs(word, hashed_output, writer, relationToUse, context):
                 print (e)
         else:
             try:
-                print("Reachhhhhhhhhhhed second try")
                 for link in soup.find_all('a', {'href': 'synset?wnid=n{}'.format(syn_offset)}):
                     writer.write(
                         '_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
                                                                                          word, link.img['src'],
                                                                                          context))
-                    print('_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
+                    # print('_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
                                                                                          word, link.img['src'],
                                                                                          context))
                     writer.write('\n')
@@ -98,7 +93,6 @@ def readFile(fileName, context):
                 sub_line1 = sub_line1.split('/')[-1].upper()
                 try:
                     extractedSub = entityEtra.get_continuous_chunks(sub_line1.upper())
-                    print("sub ext", extractedSub)
                     extractedSubLength = len(extractedSub)
                 except Exception as e:
                     print(e)
@@ -138,7 +132,6 @@ def readFile(fileName, context):
                 sub_line2 = sub_line2.split('/')[-1].upper()
                 try:
                     extractedObj = entityEtra.get_continuous_chunks(sub_line2.upper())
-                    print("obj ext", extractedObj)
                     extractedObjLength = len(extractedObj)
                 except Exception as e:
                     print(e)
