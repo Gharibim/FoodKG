@@ -161,7 +161,6 @@ def queryData():
                 shutil.rmtree('outFinal')
             os.system('./../apache-jena-3.12.0/bin/tdbloader2 --loc outFinal input.nq')
             os.system('./../apache-jena-3.12.0/bin/tdbquery --loc outFinal --query query.sparql > output.nq')
-            print("Tst")
             data = readFileResult()
         except Exception as e:
             print(e)
