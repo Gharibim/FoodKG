@@ -36,7 +36,7 @@ def readFile(fileName, context):
 
 
 
-        print("timmmmmmme is :", "--- %s seconds ---" % (time.time() - start_time))
+        # print("timmmmmmme is :", "--- %s seconds ---" % (time.time() - start_time))
         writer.flush()
         writer.close()
 
