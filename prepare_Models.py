@@ -30,14 +30,14 @@ def prepare_Models():
     global dist_labels
     print("Loading word embeddings...")
     t_embeddings = text_embeddings.Embeddings()
-    t_embeddings.load_embeddings(source, 10000, language='default', print_loading=True, skip_first_line=True)
+    t_embeddings.load_embeddings(source, 1000000, language='default', print_loading=True, skip_first_line=True)
     vocabulary_size = len(t_embeddings.lang_vocabularies["default"])
     embeddings = t_embeddings.lang_embeddings["default"].astype(np.float64)
     embedding_size = t_embeddings.emb_sizes["default"]
     t_embeddings.inverse_vocabularies()
 
     print("Loading model...")
-    print(os.getcwd())
+    # print(os.getcwd())
     hyperparams, vars = pickle.load(open("Prediction/relations_prediction/args.output", "rb"))
 
     same_mlp = hyperparams[0]
@@ -81,5 +81,5 @@ def predict_Relationship(subject, object):
     to_write = list(zip([t_embeddings.get_word_from_index(x[0], lang="default") for x in predict_pairs],
                         [t_embeddings.get_word_from_index(x[1], lang="default") for x in predict_pairs],
                         pred_labels))
-    print("To WriteLOOOOOOOL", to_write)
+    # print("To WriteLOOOOOOOL", to_write)
     return to_write[0][2]
