@@ -1,3 +1,8 @@
+'''
+Here we use our retrained model STM to predict the relation between each two concepts. 
+If there is a relation between two subjects the we check the similarity between them 
+'''
+
 import os
 import time
 import itertools
@@ -13,7 +18,7 @@ subToUse, objToUse = '', ''
 words_to_use = ''
 Universal_rel = ''
 
-
+# Write a triple after predicting the relation between the subject and object
 def write_Relation(subject, object, writer, sub1, sub2, context):
     global mainSim
     global hashOut
@@ -29,6 +34,7 @@ def write_Relation(subject, object, writer, sub1, sub2, context):
     writer.write("\n")
 
 
+# Return the semantic similarity between the subject and the object
 def calSimilarity(subject, object, writer, sub1, sub2, context):
     global mainSim
     global hashOut
@@ -39,10 +45,12 @@ def calSimilarity(subject, object, writer, sub1, sub2, context):
         pass
 
 
+# A wrapper function for the semantic similarity
 def checkSim(f, s):
     from prepare_Models import get_Similarity
     return get_Similarity(f, s)
 
+# Check the similarity When there is a list of words instead of 2
 def check_Words(extractedSub, extractedObj):
     min_similarity = 0
     sub_toWrite = obj_toWrite = ''

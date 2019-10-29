@@ -1,3 +1,7 @@
+'''
+Related images script will return a URL that cotains hundreds of images related to the parsed subject and object
+'''
+
 import os
 import time
 import itertools
@@ -12,6 +16,7 @@ relationToUse = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 mainSim, hashOut = 0, 0
 subToUse, objToUse = '', ''
 
+# Get the related images from ImageNet, but first get their offsets from WordNet
 def imageURLS(word, hashed_output, writer, relationToUse, context):
     try:
         myWord = wordnet.synsets(word)[0]

@@ -1,3 +1,7 @@
+'''
+Running NLP algorithms to return only the meaningful words from different subject
+'''
+
 import os
 import shutil
 import time
@@ -13,6 +17,8 @@ relationToUse = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 mainSim, hashOut = 0, 0
 subToUse, objToUse = '', ''
 
+# This function was written based on NLP pos-tag and tokenize (call this function on any sentence)
+# Returns a list of words
 def get_continuous_chunks(text):
     chunked = ne_chunk(pos_tag(word_tokenize(text)))
     prev = None
@@ -32,7 +38,7 @@ def get_continuous_chunks(text):
 
 
 
-
+# a Function to read and rewrite the triples after extracting the meaningful words
 def readFile(fileName, context):
     start_time = time.time()
 

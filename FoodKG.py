@@ -1,3 +1,7 @@
+'''
+This is the main file. It will run Flask server and load the models ...
+'''
+
 from flask import Flask, render_template, request, after_this_request, make_response, send_file, redirect
 import werkzeug
 import os
@@ -15,12 +19,14 @@ mainSim, hashOut = 0, 0
 subToUse, objToUse = '', ''
 
 
+# Create a temp file to be used to store the triples between every write
 def createTemp(filename):
     with open(filename) as reader:
         with open('temp.nt', 'w+') as writer:
             for line in reader:
                 writer.write(line)
 
+# a method to handle user get & post responses and delete the actual triples after the overwrite
 @app.route('/database', methods=['GET', 'POST'])
 def upload_file():
     global context
@@ -54,7 +60,7 @@ def upload_file():
 
 
 
-
+# Routing function for the entity extraction script
 @app.route('/extractEntity')
 def extractEntity():
     from entityEtra import readFile as entityReadFile
@@ -62,6 +68,7 @@ def extractEntity():
     return render_template('upload.html', filename=filename)
 
 
+# Routing function for the relations script to predict the relation between concepts
 @app.route('/relationships')
 def relationships():
     from relations import readFile as relationReadFile
@@ -69,6 +76,7 @@ def relationships():
     return render_template('upload.html', filename=filename)
 
 
+# Routing function for the semantic similarity script. 
 @app.route('/semanticSimilarity')
 def semanticSimilarity():
     from semanticSimi import readFile as semanticReadFile
@@ -76,6 +84,7 @@ def semanticSimilarity():
     return render_template('upload.html', filename=filename)
 
 
+# Routing function for the related images page (ImageNet) a URL of images
 @app.route('/relImages')
 def relImages():
     from relatedImages import readFile as relatedReadFile
@@ -83,7 +92,7 @@ def relImages():
     return render_template('upload.html', filename=filename)
 
 
-
+# Routing function for the pure images script (3 pure images of each concept)
 @app.route('/pImages')
 def pImages():
     from pureImages import readFile as pureReadFile
@@ -91,6 +100,7 @@ def pImages():
     return render_template('upload.html', filename=filename)
 
 
+# Add all the features with a single click (relations, semantic similarity, related and pure images)
 @app.route('/allfeatures')
 def allfeatures():
     from pureImages import readFile as pureReadFile
@@ -98,7 +108,7 @@ def allfeatures():
     return render_template('upload.html', filename=filename)
 
 
-
+# Routing function for downloading the file when a user clicks download file
 @app.route('/database_download', methods=['GET', 'POST'])
 def download_file():
     if request.method == 'POST':
@@ -114,16 +124,19 @@ def download_file():
     render_template('upload.html')
 
 
+# Routing function for index page (main)
 @app.route('/')
 def hello_world():
     return render_template('index.html')
 
 
+# Routing function for about us
 @app.route('/aboutUs')
 def aboutUs():
     return render_template('aboutUs.html')
 
 
+# Routing function for redirecting the triples from the main to SPARQL
 def readFileQuery():
     data = ''
     os.system('cp output.nq files/input.nq')
@@ -132,6 +145,8 @@ def readFileQuery():
         data = data.split('\n')
     return data
 
+
+# Routing function for storing the result
 def readFileResult():
     data = ''
     with open('output.nq') as reader:
@@ -140,12 +155,14 @@ def readFileResult():
     return data
 
 
+# Routing function for SPARQL page
 @app.route('/queryOutput', methods=['GET', 'POST'])
 def queryOutput():
     data = readFileQuery()
     return render_template('queryOutput.html', data=data)
 
 
+# Routing function for Apache Jena to start the engine when a query is given
 @app.route('/queryData', methods=['GET', 'POST'])
 def queryData():
     if request.method == 'POST':
@@ -159,8 +176,8 @@ def queryData():
             writer.close()
             if 'outFinal' in os.listdir():
                 shutil.rmtree('outFinal')
-            os.system('./../apache-jena-3.12.0/bin/tdbloader2 --loc outFinal input.nq')
-            os.system('./../apache-jena-3.12.0/bin/tdbquery --loc outFinal --query query.sparql > output.nq')
+            os.system('./../apache-jena-3.13.1/bin/tdbloader2 --loc outFinal input.nq')
+            os.system('./../apache-jena-3.13.1/bin/tdbquery --loc outFinal --query query.sparql > output.nq')
             data = readFileResult()
         except Exception as e:
             print(e)
@@ -169,6 +186,8 @@ def queryData():
             return render_template('queryOutput.html', data1=data)
     return render_template('queryOutput.html', data=data)
 
+
+# Routing function to download SPARQL output
 @app.route('/downloadData', methods=['GET', 'POST'])
 def downloadData():
     if request.method == 'POST':
@@ -189,7 +208,7 @@ def output_Data():
     return render_template('output.html', data=data)
 
 
-
+# Load the models and render host 0.0.0.0 to 127.0.0.1 in docker
 if __name__ == '__main__':
     prepare_Models()
     app.run(use_reloader=False, host='0.0.0.0')

@@ -1,3 +1,7 @@
+'''
+Load the embedding model using TF and then load the STM model
+'''
+
 import os
 import tensorflow as tf
 import numpy as np
@@ -7,8 +11,9 @@ from Prediction.embeddings import text_embeddings
 from Prediction.models import wordpair_classifier
 
 
-source = 'Prediction/AGROVEC/vectors.300d.txt'
+source = 'Prediction/AGROVEC/AGROVEC.txt'
 
+# Get the vectors for the data and return the feed dictionary
 def build_feed_dict_func(model, data, config = None, predict = False):
     x_pairs, y = zip(*data)
     x1s = [x[0] for x in x_pairs]
@@ -23,6 +28,8 @@ t_embeddings = None
 model = None
 session = None
 dist_labels = None
+
+# Start loading the models here (limit is 1000000 words)
 def prepare_Models():
     global t_embeddings
     global model
@@ -59,11 +66,12 @@ def prepare_Models():
     model.set_variable_values(session, vars)
 
 
-
+# Return the semantic similarity for subject and object (pass the actual words)
 def get_Similarity(subject, object):
     return t_embeddings.word_similarity(subject, object, "default", "default")
 
 
+# predict the relation between subject and object (pass the actual words)
 def predict_Relationship(subject, object):
     print("Preparing prediction examples...")
     predict_wordpairs = [(subject, object)]

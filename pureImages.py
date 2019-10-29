@@ -1,3 +1,7 @@
+'''
+Pure images to parse only a specific number of images that appear mostly in each picture
+'''
+
 import os
 import time
 import itertools
@@ -15,7 +19,8 @@ relationToUse = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 mainSim, hashOut = 0, 0
 subToUse, objToUse = '', ''
 
-
+# Returns the specific images based on ImageNet search API. 
+# Users should not call this function directly (there is a wraper for it)
 def specificImageURLs(word, hashed_output, writer, relationToUse, context):
     try:
         syns = wordnet.synsets('{}'.format(word))[0]

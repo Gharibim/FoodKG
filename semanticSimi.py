@@ -1,3 +1,8 @@
+'''
+This is the mail file where we get the semantic similarity for the concepts from our embedding vector (AGROVEC)
+
+'''
+
 import os
 import time
 import itertools
@@ -11,10 +16,13 @@ relationToUse = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 mainSim, hashOut = 0, 0
 subToUse, objToUse = '', ''
 
+# Generate a hash for a triple and returns 8 unique numbers to be used a blank nodes.
 def make_Hash(subject, object):
     return abs(hash('{} {}'.format(subject, object))) % (10 ** 8)
 
 
+# Writes the semantic similarity after calculating the semantic similarity
+# Do not call directly, there is a wrapper for this function in relations.py
 def write_Semantic(subject, object, writer, sub1, sub2, context):
     from relations import Universal_rel
     from prepare_Models import get_Similarity

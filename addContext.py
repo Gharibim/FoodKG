@@ -1,3 +1,7 @@
+'''
+This script will add the context for the provided triples if the user provides one
+'''
+
 import os
 import shutil
 import time
