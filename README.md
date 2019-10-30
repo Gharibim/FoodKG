@@ -40,12 +40,12 @@ If you want to re-train the STM model by yourself, we provided the SPARQL querie
 
 
 **References:** </br>
-[GEMSEC: Graph Embedding with Self Clustering](https://arxiv.org/pdf/1802.03997.pdf)
-[Specialization Tensor Model (STM)](https://github.com/codogogo/stm)
-[Stanford Parser](https://nlp.stanford.edu/software/lex-parser.shtml)
+[GEMSEC: Graph Embedding with Self Clustering](https://arxiv.org/pdf/1802.03997.pdf) </br>
+[Specialization Tensor Model (STM)](https://github.com/codogogo/stm) </br>
+[Stanford Parser](https://nlp.stanford.edu/software/lex-parser.shtml) </br>
 [Tensorflow](https://www.tensorflow.org/)</br>
 [AGROVOC](http://aims.fao.org/vest-registry/vocabularies/agrovoc/)</br>
 [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/)</br>
-[Apache Jena](https://jena.apache.org/download/index.cgi)
+[Apache Jena](https://jena.apache.org/download/index.cgi) </br>
 
 
