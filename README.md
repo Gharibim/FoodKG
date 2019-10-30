@@ -2,7 +2,7 @@
 
 **Run FoodKG** 
 FoodKG exists on Docker. To run our tool, just downlaod docker on your machine: [Docker](https://docs.docker.com/docker-for-mac/install/) then run the following command:</br>
-`docker run -p 5000:5000 foodkg` </br>
+`docker run -p 5000:5000 gharibim/foodkg:3.1` </br>
 FoodKG will start on the localhost, port 5000: `127.0.0.1:5000`</br>
 You can find a sample input file in `Sample_Input` folder
 
@@ -15,10 +15,9 @@ You can find a sample input file in `Sample_Input` folder
 3) NLTK 
 4) Werkzeug 
 5) Beautiful Soup  </br>
-Install [AGROVEC Embedding model](https://drive.google.com/file/d/1Xsw3C_Y0T52sawssbfyGsjA_0ig2EuLx/view?usp=sharing) from Google drive and place in `FoodKG/Prediction/AGROVEC/`.</br>
+Install [AGROVEC Embedding model](https://drive.google.com/file/d/1Xsw3C_Y0T52sawssbfyGsjA_0ig2EuLx/view?usp=sharing) from Google drive, unzip it then place in `FoodKG/Prediction/AGROVEC/`.</br>
 After that, download [Apache Jena](https://jena.apache.org/download/index.cgi) and place it in Apache Jena directory.</br>
-Finally run `FoodKG.py` which is the main script that will start Flask server at localhost. </br>
-`python3 FoodKG.py`
+Finally run `python3 FoodKG.py` which is the main script that will start Flask server at localhost. </br>
 </br>
 
 
