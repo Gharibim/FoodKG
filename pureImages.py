@@ -45,9 +45,7 @@ def specificImageURLs(word, hashed_output, writer, relationToUse, context):
                         '_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
                                                                                          word, link.img['src'],
                                                                                          context))
-                    # print('_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse,
-                                                                                         word, link.img['src'],
-                                                                                         context))
+                    # print('_:{} <{}{}_Images> "http://www.image-net.org/{}" <{}> .'.format(hashed_output, relationToUse, word, link.img['src'], context))
                     writer.write('\n')
             except Exception as e:
                 pass
