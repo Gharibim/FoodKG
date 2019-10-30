@@ -1,4 +1,4 @@
-# FoodKG: A Software Tool to Enrich Knowledge Graphs on Food Datasets </br> </br>
+# FoodKG: A Tool to Enrich Knowledge Graphs Using Machine Learning Techniques </br> </br>
 
 **Run FoodKG with one command** </br>
 FoodKG exists on Docker. To run our tool, just install docker on your machine: [Docker](https://docs.docker.com/docker-for-mac/install/) then run the following command:</br>
