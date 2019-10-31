@@ -2,7 +2,7 @@
 
 **Run FoodKG with one command** </br>
 FoodKG exists on Docker. To run our tool, just install docker on your machine: [Docker](https://docs.docker.com/docker-for-mac/install/) then run the following command:</br>
-`docker run -p 5000:5000 gharibim/foodkg:3.1` </br>
+`docker run -p 5000:5000 gharibim/foodkg` </br>
 FoodKG will start on the localhost, port 5000: `127.0.0.1:5000`</br>
 You can find a sample input file in `Sample_Input` folder </br>
 and sample context: `http://example.com`
