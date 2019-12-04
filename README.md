@@ -37,7 +37,8 @@ FoodKG uses [Specialization Tensor Model (STM)](https://github.com/codogogo/stm)
 
 If you want to re-train the STM model by yourself, we provided the SPARQL queries that you will need to extract the instances from a dataset `SPARQL_Queries`. In our case, we used `AGROVOC` triples dataset, which get be found [here](http://aims.fao.org/agrovoc/releases). After extracting the instances using SPARQL, check [STM Github](https://github.com/codogogo/stm) page to prepare the training data for STM. </br></br>
 
-
+**Evaluation**</br>
+To reproduce the results, you can download the models and the evaluation dataset from [Google Drive](https://drive.google.com/file/d/1o8l6Ti0DaywOrzgVlNn3qbRKrV3oTEY9/view?usp=sharing) </br>
 
 **References:** </br>
 [GEMSEC: Graph Embedding with Self Clustering](https://arxiv.org/pdf/1802.03997.pdf) </br>
