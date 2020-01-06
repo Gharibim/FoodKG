@@ -49,4 +49,5 @@ To reproduce the results, you can download the models and the evaluation dataset
 [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/)</br>
 [Apache Jena](https://jena.apache.org/download/index.cgi) </br>
 
-
+**Acknowledgments:**
+We would like the acknowledge the partial support of NSF Grant No. 1747751.
