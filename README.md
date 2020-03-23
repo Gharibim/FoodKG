@@ -50,4 +50,9 @@ To reproduce the results, you can download the models and the evaluation dataset
 [Apache Jena](https://jena.apache.org/download/index.cgi) </br>
 
 **Acknowledgments:**
-We would like the acknowledge the partial support of NSF Grant No. 1747751.
+We would like the acknowledge the partial support of NSF Grant No. 1747751. </br>
+
+**Publications:**
+Mohamed Gharibi, Arun Zachariah, Praveen Rao - FoodKG: A Software Tool to Enrich Knowledge Graphs on Food Datasets. In Frontiers in Big Data (Data Mining and Management), 19 pages, 2020. (in press)</br>
+
+Front. Big Data doi: 10.3389/fdata.2020.00012
